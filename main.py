@@ -45,7 +45,6 @@ def write_csv(data):
         writer = csv.DictWriter(f, fieldnames=order)
         writer.writerow(data)
 
-
 def get_page_data(url):
     p = get_proxy()
     proxy = {p['schema']: p['address']}
@@ -109,7 +108,6 @@ def main():
     #     p.map(get_page_data, urls)
     for i in range(1, 101):
         print(i)
-        #base_url='https://m.avito.ru/api/9/items?key=af0deccbgcgidddjgnvljitntccdduijhdinfgjgfjir&locationId=641470&categoryId=19&page={}&lastStamp=1579138620&display=list&limit=30'.format(str(i))
         url='https://m.avito.ru/api/9/items?key=af0deccbgcgidddjgnvljitntccdduijhdinfgjgfjir&sort=default&locationId=641470&categoryId=85&page={}&lastStamp=1579228620&display=list&limit=30'.format(str(i))
         get_page_data(url)
 
